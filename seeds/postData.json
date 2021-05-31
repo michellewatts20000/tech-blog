@@ -1,0 +1,14 @@
+[
+  {
+    "name": "Why you should learn JavaScript?",
+    "description": "A strong argument for learning JS."
+  },
+  {
+    "name": "How to decome a fullstack developer in 1 hour",
+    "description": "We're serious!"
+  },
+  {
+    "name": "Sequalise your node.js",
+    "description": "Making calls to your database and getting back the things that you want."
+  }
+]
