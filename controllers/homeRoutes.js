@@ -49,8 +49,6 @@ router.get('/post/:id', async (req, res) => {
   }
 });
 
-console.log('Here');
-
 // Use withAuth middleware to prevent access to route
 router.get('/profile', withAuth, async (req, res) => {
   try {
