@@ -49,6 +49,8 @@ router.get('/post/:id', async (req, res) => {
   }
 });
 
+console.log('Here');
+
 // Use withAuth middleware to prevent access to route
 router.get('/profile', withAuth, async (req, res) => {
   try {
@@ -57,8 +59,10 @@ router.get('/profile', withAuth, async (req, res) => {
       attributes: { exclude: ['password'] },
       include: [{ model: post }],
     });
+    console.log('userData', userData);
 
     const user = userData.get({ plain: true });
+    console.log('user', user);
 
     res.render('profile', {
       ...user,
