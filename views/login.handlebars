@@ -1,8 +1,17 @@
-<div class="row">
-  <div class="col-md-6">
-    <h2>Login</h2>
+<div class="row justify-content-between">
+  <div class="col-md-5 mb-5">
+    <form class="form-signin login-form">
+      <h1 class="h3 mb-3 font-weight-normal">Sign in</h1>
+      <label for="email-login" class="sr-only">Email address</label>
+      <input type="email" id="email-login" class="form-control mb-3" placeholder="Email address" required autofocus>
 
-    <form class="form login-form">
+      <label for="password-login" class="sr-only">Password</label>
+      <input type="password" id="password-login" class="form-control mb-3" placeholder="Password" required>
+
+      <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+    </form>
+  </div>
+  {{!-- <form class="form login-form">
       <div class="form-group">
         <label for="email-login">email:</label>
         <input class="form-input" type="text" id="email-login" />
@@ -14,10 +23,25 @@
       <div class="form-group">
         <button class="btn btn-primary" type="submit">login</button>
       </div>
+    </form> --}}
+
+
+
+  <div class="col-md-5">
+    <form class="form-signin signup-form">
+      <h1 class="h3 mb-3 font-weight-normal">Create account</h1>
+      <label for="name-signup" class="sr-only">Name</label>
+      <input type="name" id="name-signup" class="form-control mb-3" placeholder="Michelle Test" required autofocus>
+      <label for="email-signup" class="sr-only">Email address</label>
+      <input type="email" id="email-signup" class="form-control mb-3" placeholder="test@email.com" required>
+      <label for="password-signup" class="sr-only">Password</label>
+      <input type="password" id="password-signup" class="form-control mb-3" placeholder="Password" required>
+
+      <button class="btn btn-lg btn-primary btn-block" type="submit">Create account</button>
     </form>
   </div>
-  <div class="col-md-6">
-    <h2>Signup</h2>
+
+  {{!-- <h2>Signup</h2>
 
     <form class="form signup-form">
       <div class="form-group">
@@ -35,8 +59,8 @@
       <div class="form-group">
         <button class="btn btn-primary" type="submit">signup</button>
       </div>
-    </form>
-  </div>
+    </form> --}}
+</div>
 </div>
 
 <script src="./js/login.js"></script>
