@@ -2,13 +2,15 @@ const newFormHandler = async (event) => {
   event.preventDefault();
 
   const name = document.querySelector('#post-name').value.trim();
-  // const needed_funding = document.querySelector('#post-funding').value.trim();
   const description = document.querySelector('#post-desc').value.trim();
 
   if (name && description) {
     const response = await fetch(`/api/post`, {
       method: 'POST',
-      body: JSON.stringify({ name, description }),
+      body: JSON.stringify({
+        name,
+        description,
+      }),
       headers: {
         'Content-Type': 'application/json',
       },
@@ -23,8 +25,6 @@ const newFormHandler = async (event) => {
 };
 
 const delButtonHandler = async (event) => {
-  console.log('click');
-
   if (event.target.hasAttribute('data-id')) {
     const id = event.target.getAttribute('data-id');
 
@@ -40,6 +40,21 @@ const delButtonHandler = async (event) => {
   }
 };
 
+const upButtonHandler = async (event) => {
+  if (event.target.hasAttribute('data-id')) {
+    const id = event.target.getAttribute('data-id');
+    const response = await fetch(`/api/post/${id}`, {
+      method: 'UPDATE',
+    });
+
+    if (response.ok) {
+      document.location.replace('/dashboard');
+    } else {
+      alert('Failed to update post');
+    }
+  }
+};
+
 document
   .querySelector('.new-post-form')
   .addEventListener('submit', newFormHandler);
@@ -47,3 +62,7 @@ document
 document
   .querySelector('.post-list')
   .addEventListener('click', delButtonHandler);
+
+document
+  .querySelector('.post-update')
+  .addEventListener('click', upButtonHandler);
