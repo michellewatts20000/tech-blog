@@ -16,46 +16,31 @@
     </div>
   </div>
 
-
-  <p>{{comment.user_id}} </p>
-
-{{!-- {{> comments post.comments}}
-
+<div class="row justify-content-md-center mt-5">
+  <div class="col-md-8">
+ <h3>Comments:</h3>
   {{#if comments.length}}
-  <div class="col-md-5">
-    <h3>All your posts:</h3>
-
     {{#each comments as |comment|}}
-    <div class="row mb-2">
-      <div class="col-md-8">
-       <h2>something renders at least</h2>
-      </div>
+<div class="card">
+  
+  <div class="card-body">
     
-    </div>
-    {{/each}}
+    <h5 class="card-text">{{this.comment}}</h5>
+    <p class="card-title">Created by: {{user_id}}</p>
+  
   </div>
-  {{/if}}
+</div>
+{{/each}}
+    
+
+    {{/if}}
+  </div>
 </div>
 
 
 
-{{#if comment.length}}
-  <div class="comments">
-    {{#each comment as |comments| }}
-    <div class="card">
-      <h3 class="card-header"></h3>
-      <section class="comment card-body">
-        <div class="text">
-          {{comment}}
-        </div>
-        <div class="meta">
-          {{name}}
-        </div>
-      </section>
-    </div>
-    {{/each}}
-  </div>
- {{/if}} --}}
+   
+
 
 
 

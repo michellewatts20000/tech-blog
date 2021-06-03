@@ -56,6 +56,7 @@ router.get('/:id', (req, res) => {
         return;
       }
       res.json(dbPostData);
+      res.render('post');
     })
     .catch((err) => {
       console.log(err);
