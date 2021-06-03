@@ -35,32 +35,6 @@ router.get('/', async (req, res) => {
   }
 });
 
-router.get('/', (req, res) => {
-  Post.findAll({
-    include: [
-      // include a post's author
-      {
-        model: User,
-        attributes: ['name'],
-      },
-      // include comments for each post and the comments' authors
-      {
-        model: Comment,
-        attributes: ['comment'],
-        include: {
-          model: User,
-          attributes: ['name'],
-        },
-      },
-    ],
-  })
-    .then((dbPostData) => res.json(dbPostData))
-    .catch((err) => {
-      console.log(err);
-      res.status(500).json(err);
-    });
-});
-
 router.get('/post/:id', async (req, res) => {
   try {
     const postData = await Post.findByPk(req.params.id, {
@@ -75,9 +49,7 @@ router.get('/post/:id', async (req, res) => {
         },
       ],
     });
-
     const post = postData.get({ plain: true });
-
     res.render('post', {
       ...post,
       logged_in: req.session.logged_in,
@@ -99,11 +71,10 @@ router.get('/dashboard', withAuth, async (req, res) => {
     console.log('userData', userData);
 
     const user = userData.get({ plain: true });
-    console.log('user', user);
 
     res.render('dashboard', {
       ...user,
-      logged_in: true,
+      logged_in: req.session.logged_in,
     });
   } catch (err) {
     res.status(500).json(err);
@@ -116,7 +87,6 @@ router.get('/login', (req, res) => {
     res.redirect('/dashboard');
     return;
   }
-
   res.render('login');
 });
 
@@ -139,7 +109,7 @@ router.get('/edit/:id', withAuth, (req, res) => {
         return;
       }
       const post = dbPostData.get({ plain: true });
-      res.render('edit-post', { post, logged_in: true });
+      res.render('edit-post', { post, logged_in: req.session.logged_in });
     })
     .catch((err) => {
       console.log(err);
