@@ -2,14 +2,34 @@
     <h3 class="card-header">Edit Post</h3>
     <form class="card-body edit-post-form">
         <label for="post-title" class="form-label">Title</label>
-        <input name="post-title" type="text" value="{{post.title}}" class="form-input" />
+        <input name="post-title" type="text" value="{{post.name}}" class="form-input" />
         <label class="form-label" for="content">Content</label>
-        <input name="content" type="text" value="{{post.description}}" class="form-input" />
+
+        <input name="content" type="text" value="{{post.description}}" />
+
+
+
         <button type="submit" class="btn">Update Post</button>
         <button type="button" class="delete-post-btn btn">Delete Post</button>
     </form>
 </div>
 
+<div class="col-md-5 mb-5">
+    <form class="form new-post-form">
+        <h1 class="h3 mb-3 font-weight-normal">Edit post</h1>
+        <label for="post-name" class="sr-only">Post title</label>
+        <input type="text" id="post-name" class="form-control mb-3" value="{{post.name}}">
 
-<script src="./js/login.js"></script>
+        <label for="post-desc" class="sr-only">Content</label>
+        <textarea name="content" type="text" value="{{post.description}}" <textarea name="content" type="text"
+            value="{{post.description}}" id="post-desc" class="form-control mb-3 edit-post-btn"></textarea>
 
+        <button class="btn btn-lg btn-primary btn-block edit-post-btn" type="submit">Update</button>
+        <button class="btn btn-lg btn-warning btn-block delete-post-btn" type="submit">Delete</button>
+
+
+    </form>
+</div>
+
+
+<script src="./js/dashboard.js"></script>
