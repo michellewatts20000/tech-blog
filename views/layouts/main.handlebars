@@ -18,7 +18,7 @@
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
           {{#if logged_in}}
-          <a class="navbar-brand" href="/dashboard">Your Dashboard</a>
+          <h4><a class="navbar-brand" href="/dashboard">Welcome, {{logged_in.name}}!</a></h4>
           {{else}}
           <a class="navbar-brand" href="/">Tech Blog</a>
           {{/if}}
@@ -32,7 +32,7 @@
               <a class="nav-link" href="/">Home</a>
               <a class="nav-link" href="/dashboard">Dashboard</a>
               <a class="nav-link" id="logout" href="/logout">Logout</a>
-
+              
               {{else}}
               <a class="nav-link" href="/login">Login</a>
               {{/if}}
