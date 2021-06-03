@@ -3,9 +3,6 @@
   <p>{{description}}</p>
   <p>Created by {{user.name}} on {{format_date date_created}}</p>
 
-
-
-
   <div class="row justify-content-md-center">
     <div class="col-md-6">
       <form class="form-signin signup-form">
@@ -14,14 +11,34 @@
           placeholder="write your comment here" required>
 
 
-        <button class="btn btn-md btn-danger comment-form btn-block" type="submit">Submit</button>
+        <button class="btn btn-md btn-danger comment-form" type="submit">Submit</button>
       </form>
     </div>
   </div>
 
+{{> comments post.comments}}
 
+  {{!-- {{#if comments.length}}
+  <div class="col-md-5">
+    <h3>All your posts:</h3>
+
+    {{#each comments as |comment|}}
+    <div class="row mb-2">
+      <div class="col-md-8">
+       <h2>something renders at least</h2>
+      </div>
+    
+    </div>
+    {{/each}}
+  </div>
+  {{/if}}
+</div> --}}
+
+
+{{!-- 
+{{#if comment.length}}
   <div class="comments">
-    {{#each comments as |comment| }}
+    {{#each comment as |comments| }}
     <div class="card">
       <h3 class="card-header"></h3>
       <section class="comment card-body">
@@ -29,13 +46,13 @@
           {{comment}}
         </div>
         <div class="meta">
-          {{user.name}}
+          {{name}}
         </div>
       </section>
     </div>
     {{/each}}
   </div>
-
+ {{/if}} --}}
 
 
 

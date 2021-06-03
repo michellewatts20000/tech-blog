@@ -6,6 +6,7 @@ async function commentFormHandler(event) {
     .value.trim();
 
   console.log(comment);
+  const user_id = 1;
 
   const post_id = window.location.toString().split('/')[
     window.location.toString().split('/').length - 1
@@ -17,6 +18,7 @@ async function commentFormHandler(event) {
       body: JSON.stringify({
         comment,
         post_id,
+        user_id,
       }),
       headers: {
         'Content-Type': 'application/json',
@@ -24,7 +26,6 @@ async function commentFormHandler(event) {
     });
 
     if (response.ok) {
-      console.log(response);
       document.location.replace('/dashboard');
     } else {
       alert('Failed to create post');
@@ -32,6 +33,10 @@ async function commentFormHandler(event) {
   }
 }
 
+// document
+//   .querySelector('.comment-form')
+//   .addEventListener('submit', commentFormHandler);
+
 document
   .querySelector('.comment-form')
-  .addEventListener('submit', commentFormHandler);
+  .addEventListener('click', commentFormHandler);
