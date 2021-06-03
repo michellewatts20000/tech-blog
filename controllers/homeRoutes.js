@@ -11,6 +11,14 @@ router.get('/', async (req, res) => {
           model: User,
           attributes: ['name'],
         },
+        {
+          model: Comment,
+          attributes: ['comment'],
+          include: {
+            model: User,
+            attributes: ['name'],
+          },
+        },
       ],
     });
 
@@ -27,6 +35,32 @@ router.get('/', async (req, res) => {
   }
 });
 
+router.get('/', (req, res) => {
+  Post.findAll({
+    include: [
+      // include a post's author
+      {
+        model: User,
+        attributes: ['name'],
+      },
+      // include comments for each post and the comments' authors
+      {
+        model: Comment,
+        attributes: ['comment'],
+        include: {
+          model: User,
+          attributes: ['name'],
+        },
+      },
+    ],
+  })
+    .then((dbPostData) => res.json(dbPostData))
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
+
 router.get('/post/:id', async (req, res) => {
   try {
     const postData = await Post.findByPk(req.params.id, {
@@ -35,10 +69,10 @@ router.get('/post/:id', async (req, res) => {
           model: User,
           attributes: ['name'],
         },
-        // {
-        //   model: Comment,
-        //   attributes: ['id', 'comment', 'user_id', 'post_id'],
-        // },
+        {
+          model: Comment,
+          attributes: ['id', 'comment', 'user_id', 'post_id'],
+        },
       ],
     });
 
