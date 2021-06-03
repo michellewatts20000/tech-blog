@@ -2,7 +2,7 @@ async function commentFormHandler(event) {
   event.preventDefault();
 
   const comment = document
-    .querySelector('input[name="comment-body"]')
+    .querySelector('textarea[name="comment-body"]')
     .value.trim();
 
   console.log(comment);
