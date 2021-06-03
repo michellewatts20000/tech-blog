@@ -2,6 +2,15 @@ const router = require('express').Router();
 const { Post } = require('../../models');
 const withAuth = require('../../utils/auth');
 
+router.get('/', (req, res) => {
+  Post.findAll({})
+    .then((dbCommentData) => res.json(dbCommentData))
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
+
 router.post('/', withAuth, async (req, res) => {
   try {
     const newPost = await Post.create({
