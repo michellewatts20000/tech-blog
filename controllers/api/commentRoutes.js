@@ -14,10 +14,13 @@ router.get('/', (req, res) => {
 router.post('/', withAuth, async (req, res) => {
   try {
     const newPost = await Comment.create({
-      ...req.body,
+      user_id: req.session.user_id,
+      post_id: parseInt(req.body.post_id),
       comment: req.body.comment,
     });
-    console.log('response', res);
+
+    console.log('response', res.session);
+    console.log('newPost', newPost);
 
     res.status(200).json(newPost);
   } catch (err) {
@@ -25,5 +28,20 @@ router.post('/', withAuth, async (req, res) => {
     res.status(400).json(err);
   }
 });
+
+// router.post('/', withAuth, (req, res) => {
+//   if (req.session) {
+//     Comment.create({
+//       comment: req.body.comment,
+//       post_id: req.body.post_id,
+//       user_id: req.session.user_id,
+//     })
+//       .then((dbCommentData) => res.json(dbCommentData))
+//       .catch((err) => {
+//         console.log(err);
+//         res.status(400).json(err);
+//       });
+//   }
+// });
 
 module.exports = router;
