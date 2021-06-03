@@ -40,20 +40,20 @@ const delButtonHandler = async (event) => {
   }
 };
 
-const upButtonHandler = async (event) => {
-  if (event.target.hasAttribute('data-id')) {
-    const id = event.target.getAttribute('data-id');
-    const response = await fetch(`/api/post/${id}`, {
-      method: 'UPDATE',
-    });
+// const upButtonHandler = async (event) => {
+//   if (event.target.hasAttribute('data-id')) {
+//     const id = event.target.getAttribute('data-id');
+//     const response = await fetch(`/api/post/${id}`, {
+//       method: 'UPDATE',
+//     });
 
-    if (response.ok) {
-      document.location.replace('/dashboard');
-    } else {
-      alert('Failed to update post');
-    }
-  }
-};
+//     if (response.ok) {
+//       document.location.replace('/dashboard');
+//     } else {
+//       alert('Failed to update post');
+//     }
+//   }
+// };
 
 document
   .querySelector('.new-post-form')
@@ -63,6 +63,6 @@ document
   .querySelector('.post-list')
   .addEventListener('click', delButtonHandler);
 
-document
-  .querySelector('.post-update')
-  .addEventListener('click', upButtonHandler);
+// document
+//   .querySelector('.post-update')
+//   .addEventListener('click', upButtonHandler);

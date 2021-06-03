@@ -16,8 +16,9 @@ Post.init(
       allowNull: false,
     },
     description: {
-      type: DataTypes.STRING,
+      type: DataTypes.TEXT('long'),
     },
+
     date_created: {
       type: DataTypes.DATE,
       allowNull: false,
