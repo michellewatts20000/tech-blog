@@ -39,8 +39,8 @@ router.delete('/:id', withAuth, async (req, res) => {
 router.put('/:id', withAuth, (req, res) => {
   Post.update(
     {
-      title: req.body.title,
-      content: req.body.content,
+      name: req.body.title,
+      description: req.body.content,
     },
     {
       where: {
@@ -49,6 +49,7 @@ router.put('/:id', withAuth, (req, res) => {
     }
   )
     .then((dbPostData) => {
+      console.log(dbPostData);
       if (!dbPostData) {
         res.status(404).json({ message: 'No post found with this id' });
         return;
