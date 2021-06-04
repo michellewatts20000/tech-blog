@@ -1,14 +1,14 @@
 <div class="col-md-5 mb-5">
     <form class="form new-post-form">
-        <h1 class="h3 mb-3 font-weight-normal">Edit post</h1>
-        <label for="post-name" class="sr-only">Post title</label>
+        <h1 class="h3 mb-3 font-weight-normal">Edit post:</h1>
+        <label for="post-name" class="sr-only">Post title:</label>
         <input type="text" name="post-title" class="form-control mb-3" value="{{post.name}}">
 
         <label for="post-desc" class="sr-only">Content</label>
         <textarea name="content" type="text" value="{{post.description}}" id="post-desc" class="form-control mb-3">{{post.description}}</textarea>
 
         <button class="btn btn-lg btn-primary btn-block edit-post-btn" type="submit">Update</button>
-        {{!-- <button class="btn btn-lg btn-warning btn-block delete-post-btn" type="submit">Delete</button> --}}
+        <button class="btn btn-lg btn-warning btn-block delete-post-btn" type="submit">Delete</button>
     </form>
 </div>
 
