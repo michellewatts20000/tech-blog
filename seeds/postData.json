@@ -1,14 +1,14 @@
 [
   {
     "name": "Why you should learn JavaScript?",
-    "description": "A strong argument for learning JS."
+    "description": "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Suspendisse dapibus congue purus ut aliquet. Quisque maximus elementum hendrerit. Vivamus id accumsan massa. Integer lobortis enim pellentesque nisl tincidunt mattis. Donec ultrices pretium lacus et blandit. Maecenas a quam pellentesque, ornare dui id, maximus risus. Fusce commodo tempor odio id feugiat. Vestibulum volutpat odio neque, dictum scelerisque justo tincidunt vel. Nulla in arcu mi. Curabitur eget aliquam lorem, ut molestie nisi. Praesent vel lacinia nisl, nec scelerisque lorem."
   },
   {
     "name": "How to decome a fullstack developer in 1 hour",
-    "description": "We're serious!"
+    "description": "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Suspendisse dapibus congue purus ut aliquet. Quisque maximus elementum hendrerit. Vivamus id accumsan massa. Integer lobortis enim pellentesque nisl tincidunt mattis. Donec ultrices pretium lacus et blandit. Maecenas a quam pellentesque, ornare dui id, maximus risus. Fusce commodo tempor odio id feugiat. Vestibulum volutpat odio neque, dictum scelerisque justo tincidunt vel. Nulla in arcu mi. Curabitur eget aliquam lorem, ut molestie nisi. Praesent vel lacinia nisl, nec scelerisque lorem."
   },
   {
     "name": "Sequalise your node.js",
-    "description": "Making calls to your database and getting back the things that you want."
+    "description": "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Suspendisse dapibus congue purus ut aliquet. Quisque maximus elementum hendrerit. Vivamus id accumsan massa. Integer lobortis enim pellentesque nisl tincidunt mattis. Donec ultrices pretium lacus et blandit. Maecenas a quam pellentesque, ornare dui id, maximus risus. Fusce commodo tempor odio id feugiat. Vestibulum volutpat odio neque, dictum scelerisque justo tincidunt vel. Nulla in arcu mi. Curabitur eget aliquam lorem, ut molestie nisi. Praesent vel lacinia nisl, nec scelerisque lorem."
   }
 ]
