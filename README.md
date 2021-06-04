@@ -1,4 +1,4 @@
-# tech blog
+# Tech blog
 
   <a href="https://opensource.org/licenses/MIT">
   <img src="https://img.shields.io/badge/License-MIT-yellow.svg"></a>
@@ -10,7 +10,8 @@
   - [Installation](#installation)
   - [Usage](#usage)
   - [How to contribute](#contribute)
-  
+  - [Screenshots](#screenshots)
+  - [Deployed app](#app)
   - [License](#license)
   - [Questions](#questions)
 
@@ -20,12 +21,20 @@
   ## Usage
   via Heroku, or you can run it locally by installing the db and setting up a .env and running npm start.
 
-  
+  ## Technologies used
+  Node.js, Express, Handlebars, mysql2, sequelize, dotenv, JS, Bootstrap.
 
   ## Contribute
   Email me at watts.e.michelle@gmail.com
 
-  
+  ## Screenshots
+  ![screenshot of portfolio](./img/screenshot1.png)
+    ![screenshot of portfolio](./img/screenshot2.png)
+      ![screenshot of portfolio](./img/screenshot3.png)
+
+      ## App
+       [The deployed app](https://boiling-beach-99511.herokuapp.com/)
+      
 
   ## License
 
