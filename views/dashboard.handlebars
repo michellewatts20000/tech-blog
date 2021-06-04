@@ -24,8 +24,9 @@
         <p>{{shorter_extract post.description}}</p>
       </div>
       <div class="col-md-6">
+         <a class="btn btn-lg btn-warning" href="/edit/{{post.id}}">Edit</a>
         <button class="btn btn-lg btn-danger delete-post-btn" data-id="{{post.id}}">Delete</button>
-        <a class="btn btn-lg btn-warning" href="/edit/{{post.id}}">Edit</a>
+       
       </div>
     </div>
     {{/each}}
