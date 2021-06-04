@@ -32,8 +32,8 @@
     ![screenshot of portfolio](./img/screenshot2.png)
       ![screenshot of portfolio](./img/screenshot3.png)
 
-      ## App
-       [The deployed app](https://boiling-beach-99511.herokuapp.com/)
+## App
+[The deployed app](https://boiling-beach-99511.herokuapp.com/)
       
 
   ## License
